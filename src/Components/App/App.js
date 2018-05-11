@@ -7,10 +7,10 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state.searchResults = [
-      {name:'song';},
-      {artist:'artist';},
-      {album:'album';},
-      {id:'trackNumber';},
+      {name:'song'},
+      {artist:'artist'},
+      {album:'album'},
+      {id:'trackNumber'},
     ];
   }
   render() {
