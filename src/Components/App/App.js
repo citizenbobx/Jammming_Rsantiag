@@ -5,10 +5,13 @@ import './App.css';
 import Playlist from './Components/Playlist/Playlist';
 import SearchBar from './Components/SearchBar/SearchBar';
 import SearchResults from './Components/SearchResults/SearchResults';
+import Spotify from '../../util/Spotify';
 
+//step 30 v
 class App extends React.Component {
   constructor(props){
     super(props);
+    //step 31 v
     this.state= {
       searchResults: [
         {
@@ -29,7 +32,8 @@ class App extends React.Component {
           album: "Good Kid, M.A.A.D City",
           id: "12593"
         }
-      ]
+      ]//end searchResults
+      //step 37 ??? v
       playlistName:"Bob's Playlist";
       playlistTracks:[
         {
@@ -45,25 +49,66 @@ class App extends React.Component {
           id: '3101'
         }
       ]
-    };
-    this.addTrack=this.addTrack.bind(this);
-}//close constructor
-  addTrack(track){
-    let newId =
-    if this.track.id === newId{
+    };// close state
 
-    }
-  }
+    //step 42 v
+    this.addTrack=this.addTrack.bind(this);
+    //step 50 v
+    this.removeTrack=this.removeTrack.bind(this);
+    //step 58 v
+    this.updatePlaylistName=this.updatePlaylistName.bind(this);
+    //step 64 v
+    this.savePlaylist=this.savePlaylist.bind(this);
+    //step 68 v
+    this.search = this.search.bind(this);
+
+}//close constructor
+
+//step 41 v
+  addTrack(track){
+    if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+      return;
+    }//seriously, no idea what to do here
+  }//close addTrack method
+
+  //step 49 start v
+  removeTrack(track){
+    //no clue
+  }//close removeTrack method
+
+  //step 57 v
+  updatePlaylistName(name){
+    this.setState(name);
+  }//close updatePlaylistName method
+
+  //step 63 v
+  savePlaylist(){
+    trackURIs.playlistTracks[];
+  }//close savePlaylist method
+
+  //step 67 v
+  search(){
+    console.log(' ');
+  }//close search method
+
   render() {
     return (
       <div>
         <h1>Ja<span className="highlight">mmm</span>ing</h1>
         <div className="App">
-          <!-- Add a SearchBar component -->
+        //step 68 v
+          <SearchBar onSearch={this.search()}/>
           <div className="App-playlist">
+            //step 32 v
             <SearchResults searchResults={this.state.searchResults}
             onAdd={this.addTrack()} />
-            <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}/>
+            <Playlist
+            //step 38 v
+            playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}
+            //step 50 v
+            onRemove={this.removeTrack()}
+            //step 58 v
+            onNameChange={this.updatePlaylistName()}/>
           </div>
         </div>
       </div>
