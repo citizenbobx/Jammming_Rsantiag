@@ -65,19 +65,21 @@ class App extends React.Component {
 }//close constructor
 
 //step 41 v
-  addTrack(track){
-    if (this.state.playlistTracks.find(savedTrack =>
-      savedTrack.id === track.id)) {
-      return;
-    }else{
-      playlistTracks.push(track);
-      this.setState.playlistTracks;
-    }//seriously, no idea what to do here
-  }//close addTrack method
+addTrack(track) {
+  let tracks = this.state.playlistTracks;
+  if (tracks.find(savedTrack => savedTrack.id === track.id)) {
+    return;
+  }
+  tracks.push(track);
+  this.setState({playlistTracks: tracks});
+}//close addTrack method
 
   //step 49 start v
   removeTrack(track){
-    //no clue
+    if (this.state.playlistTracks.filter(savedTrack =>
+      savedTrack.id === track.id)) {
+      return;
+    }//seriously, no idea what to do here
   }//close removeTrack method
 
   //step 57 v
@@ -110,9 +112,9 @@ class App extends React.Component {
             //step 38 v
             playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}
             //step 50 v
-            onRemove={this.removeTrack()}
+            onRemove={this.removeTrack}
             //step 58 v
-            onNameChange={this.updatePlaylistName()}/>
+            onNameChange={this.updatePlaylistName}/>
           </div>
         </div>
       </div>
