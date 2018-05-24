@@ -32,9 +32,9 @@ class App extends React.Component {
           album: "Good Kid, M.A.A.D City",
           id: "12593"
         }
-      ]//end searchResults
+      ],//end searchResults
       //step 37 ??? v
-      playlistName:"Bob's Playlist";
+      playlistName:"Bobs Playlist",
       playlistTracks:[
         {
           name: 'Axolotyl',
@@ -66,8 +66,12 @@ class App extends React.Component {
 
 //step 41 v
   addTrack(track){
-    if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+    if (this.state.playlistTracks.find(savedTrack =>
+      savedTrack.id === track.id)) {
       return;
+    }else{
+      playlistTracks.push(track);
+      this.setState.playlistTracks;
     }//seriously, no idea what to do here
   }//close addTrack method
 
@@ -83,7 +87,7 @@ class App extends React.Component {
 
   //step 63 v
   savePlaylist(){
-    trackURIs.playlistTracks[];
+    trackURIs.playlistTracks();
   }//close savePlaylist method
 
   //step 67 v
@@ -113,7 +117,7 @@ class App extends React.Component {
         </div>
       </div>
     );
-  }
+  }//close render method
 }//close app subclass
 
 export default App;
