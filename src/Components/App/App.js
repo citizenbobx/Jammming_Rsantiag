@@ -76,10 +76,8 @@ addTrack(track) {
 
   //step 49 start v
   removeTrack(track){
-    if (this.state.playlistTracks.filter(savedTrack =>
-      savedTrack.id === track.id)) {
-      return;
-    }//seriously, no idea what to do here
+    tracks.filter(savedTrack => savedTrack.id === track.id);
+    this.setState({playlistTracks: tracks});
   }//close removeTrack method
 
   //step 57 v
