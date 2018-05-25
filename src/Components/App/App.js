@@ -76,7 +76,8 @@ addTrack(track) {
 
   //step 49 start v
   removeTrack(track){
-    tracks.filter(savedTrack => savedTrack.id === track.id);
+    let tracks = this.state.playlistTracks;
+    tracks.filter(savedTrack => savedTrack.id !== track.id);
     this.setState({playlistTracks: tracks});
   }//close removeTrack method
 
@@ -105,7 +106,7 @@ addTrack(track) {
           <div className="App-playlist">
             //step 32 v
             <SearchResults searchResults={this.state.searchResults}
-            onAdd={this.addTrack()} />
+            onAdd={this.addTrack} />
             <Playlist
             //step 38 v
             playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}
