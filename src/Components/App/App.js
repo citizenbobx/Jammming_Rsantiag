@@ -83,7 +83,7 @@ addTrack(track) {
 
   //step 57 v
   updatePlaylistName(name){
-    this.setState({playlistName : name});
+    this.setState({playlistName: name});
   }//close updatePlaylistName method
 
   //step 63 v
