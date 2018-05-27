@@ -22,7 +22,8 @@ const Spotify = {
     window.setTimeout(() => accessToken = '', expiresIn * 1000);
     window.history.pushState('Access Token', null, '/');
     `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`
-  }
+    }
+  }//close getAccessToken
 //step 85 v
   search(term){//step 86 v
     return fetch(
@@ -47,22 +48,19 @@ const Spotify = {
         );//close return jsonResponse callback
       }//close if instructions
     });//close second then argument
-    }//close search instructions
   }//close search method
-  savePlaylist(playlistName,[trackURIs]){
+  //step 90
+  savePlaylist(playlistName, [trackURI, trackURI, trackURI]){
+    //step 91 v
+    let accessToken = accessToken;
+    let headers = {Authorization:`Bearer:${userToken}`};
+    let userID = '';
+  }//close savePlaylist
 
-  }//close savePlaylist method
-  //step 91 v
-  let accessToken = accessToken;
-  let headers = {Authorization:`Bearer:${userToken}`};
-  let userID = '';
 };//close Spotify object
 
 
-//step 90
-method(playlistName, [trackURI, trackURI, trackURI]){
 
-}//close
 
 //step 76 v
 export default Spotify;
