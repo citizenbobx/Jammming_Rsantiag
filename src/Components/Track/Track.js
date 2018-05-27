@@ -5,17 +5,18 @@ class Track extends React.Component{
   //step 46 v
   constructor(props){
     super(props);
-    this.addTrack()=this.addTrack().bind(this);
+    this.addTrack=this.addTrack.bind(this);
     //step 54 v
-    this.removeTrack()=this.removeTrack().bind(this);
+    this.removeTrack=this.removeTrack.bind(this);
   }//close constructor
 
 //step 27 v
   renderAction(){
-    if(this.props.isRemoval ){
-      return <a className:"Track-Action" onClick={this.removeTrack}>'-'</a>
+    if(this.props.isRemoval===true){
+      return <a className='Track-Action' onClick={this.removeTrack}>'-'</a>
+    }else {
+      return <a className='Track-Action' onClick={this.addTrack}>'+'</a>
     }
-      return <a className:"Track-Action" onClick={this.addTrack}>'+'</a>;
   }//close renderAction method
 
   //step 45 v
@@ -37,7 +38,7 @@ class Track extends React.Component{
           <p>{this.props.track.artist} | {this.props.track.album}</p>
         </div>
           //step 27 part 2 v
-          {this.renderAction()}  
+          {this.renderAction()}
       </div>
     );
   }

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
-import Playlist from './Components/Playlist/Playlist';
-import SearchBar from './Components/SearchBar/SearchBar';
-import SearchResults from './Components/SearchResults/SearchResults';
+import Playlist from '../Playlist/Playlist';
+import SearchBar from '../SearchBar/SearchBar';
+import SearchResults from '../SearchResults/SearchResults';
 import Spotify from '../../util/Spotify';
 
 //step 30 v
@@ -33,22 +33,9 @@ class App extends React.Component {
           id: "12593"
         }
       ],//end searchResults
-      //step 37 ??? v
-      playlistName:"Bobs Playlist",
-      playlistTracks:[
-        {
-          name: 'Axolotyl',
-          artist: 'The Veils',
-          album: 'The Veils',
-          id: '28900'
-        },
-        {
-          name: 'The Immigrant Song',
-          artist: 'Led Zeppelin',
-          album: 'Led Zeppelin III',
-          id: '3101'
-        }
-      ]
+      //step 37 ??? v step 95 v
+      playlistName:"New Playlist",
+      playlistTracks:[ ]
     };// close state
 
     //step 42 v
@@ -86,14 +73,14 @@ addTrack(track) {
     this.setState({playlistName: name});
   }//close updatePlaylistName method
 
-  //step 63 v
+  //step 63 & step 89 v
   savePlaylist(){
-    trackURIs.playlistTracks();
+    Spotify.savePlaylist();
   }//close savePlaylist method
 
-  //step 67 v
-  search(){
-    console.log(' ');
+  //step 67 & step 88 v
+  search(term){
+    Spotify.search();
   }//close search method
 
   render() {

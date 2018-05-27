@@ -10,13 +10,14 @@ constructor(props){
 }//close constructor
 
 //step 69 v
-search(){
-  //nope
+search(event){
+  this.props.search(this.props.term);
+  event.preventDefault();
 }//close search method
 
 //step 71 v
 handleTermChange(event){
-  //???
+  this.setState({term:event.target.value});
 }//close handleTermChange
 
 class SearchBar extends React.Component{
