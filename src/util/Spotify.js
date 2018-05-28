@@ -11,10 +11,10 @@ const accessToken ='';
 //step 76
 const Spotify = {
   //step 78
-  const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
-  let accessToken = accessTokenMatch[1];
-  const getAccessToken = Spotify.getAccessToken();
-  getAccessToken(){//here comes some bullshit...
+  getAccessToken(){
+    const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
+    let accessToken = accessTokenMatch[1];
+    const getAccessToken = Spotify.getAccessToken();
       if (accessToken === true){
         return accessToken;
       }
