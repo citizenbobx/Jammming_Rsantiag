@@ -27,8 +27,7 @@ const Spotify = {
   //step 85 v
   search(term){//step 86 v
       return fetch(
-      'https://api.spotify.com/v1/search?type=track&q=TERM'
-      fetch(`https://cors-anywhere.herokuapp.com/https://api.spotify.com/v1/search?type=track&q=${term}`,
+      `https://api.spotify.com/v1/search?type=track&q=${term}`,
         {headers:{Authorization:`Bearer ${accessToken}`}}
       )//step 87 v
       .then(response => {
