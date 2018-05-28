@@ -12,49 +12,49 @@ const accessToken ='';
 const Spotify = {
   //step 78
   getAccessToken(){//here comes some bullshit...
-    if (userToken = set){
-    return savedValue => accessToken
-  }
-  //step 79 v
-  else {
-    window.location.href.match(`https://example.com/callback#access_token=${([^&]*)}&token_type=Bearer&expires_in=${([^&]*)}`);
-    //step 80 v
-    window.setTimeout(() => accessToken = '', expiresIn * 1000);
-    window.history.pushState('Access Token', null, '/');
-    `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`
-    }
-  }//close getAccessToken
-//step 85 v
-  search(term){//step 86 v
-    return fetch(
-    'https://api.spotify.com/v1/search?type=track&q=TERM'
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.spotify.com/v1/search?type=track&q=${term}`,
-      {headers:{Authorization:`Bearer ${accessToken}`}}
-    )//step 87 v
-    .then(response => {
-        return response.json();
+      if (accessToken === true){
+        return accessToken;
       }
-    ).then(jsonResponse => {
-      if (jsonResponse.tracks){
-          return jsonResponse.tracks.map(track =>(
-            {
-                ID: track.id,
-                Name : track.name,
-                Artist : track.artists[0].name,
-                Album: track.album.name,
-                URI: track.uri
-            }
-          )
-        );//close return jsonResponse callback
-      }//close if instructions
-    });//close second then argument
+      //step 79 v
+      else {
+        window.location.href.match(`https://example.com/callback#access_token=${([^&]*)}&token_type=Bearer&expires_in=${([^&]*)}`);
+        //step 80 v
+        window.setTimeout(() => accessToken = '', expiresIn * 1000);
+        window.history.pushState('Access Token', null, '/');
+        `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`
+        }
+  }//close getAccessToken
+  //step 85 v
+  search(term){//step 86 v
+      return fetch(
+      'https://api.spotify.com/v1/search?type=track&q=TERM'
+      fetch(`https://cors-anywhere.herokuapp.com/https://api.spotify.com/v1/search?type=track&q=${term}`,
+        {headers:{Authorization:`Bearer ${accessToken}`}}
+      )//step 87 v
+      .then(response => {
+          return response.json();
+        }
+      ).then(jsonResponse => {
+        if (jsonResponse.tracks){
+            return jsonResponse.tracks.map(track =>(
+              {
+                  ID: track.id,
+                  Name : track.name,
+                  Artist : track.artists[0].name,
+                  Album: track.album.name,
+                  URI: track.uri
+              }
+            )
+          );//close return jsonResponse callback
+        }//close if instructions
+      });//close second then argument
   }//close search method
   //step 90
   savePlaylist(playlistName, [trackURI, trackURI, trackURI]){
-    //step 91 v
-    let accessToken = accessToken;
-    let headers = {Authorization:`Bearer:${userToken}`};
-    let userID = '';
+      //step 91 v
+      let accessToken = accessToken;
+      let headers = {Authorization:`Bearer:${userToken}`};
+      let userID = '';
   }//close savePlaylist
 
 };//close Spotify object
