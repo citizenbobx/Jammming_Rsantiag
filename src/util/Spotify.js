@@ -53,8 +53,10 @@ const Spotify = {
   savePlaylist(playlistName, [trackURI, trackURI, trackURI]){
       //step 91 v
       let accessToken = accessToken;
-      let headers = {Authorization:`Bearer:${userToken}`};
+      let headers = {Authorization:`Bearer:${accessToken}`};
       let userID = '';
+      //step 92
+      return fetch('https://api.spotify.com/v1/me',{headers:{Authorization:`Bearer ${accessToken}`}})
   }//close savePlaylist
 
 };//close Spotify object
