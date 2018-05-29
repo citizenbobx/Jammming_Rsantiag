@@ -67,7 +67,7 @@ const Spotify = {
 //step 76 v
 export default Spotify;
 
-//////Axel's code
+//////Axel's code haven't added to subclass yet
 //step 90 v
 savePlaylist(playlistName, trackURIs) {
    if(!playlistName || !trackURIs.length) {
