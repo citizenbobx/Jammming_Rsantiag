@@ -64,8 +64,56 @@ const Spotify = {
 
 };//close Spotify object
 
-
-
-
 //step 76 v
 export default Spotify;
+
+//////Axel's code
+//step 90 v
+savePlaylist(playlistName, trackURIs) {
+   if(!playlistName || !trackURIs.length) {
+     return;
+   }
+//step 91 v
+   const accessToken = Spotify.getAccessToken();
+   const headers = {Authorization: Bearer ${accessToken}};
+   let userId;
+//step 92 v
+   return fetch('https://api.spotify.com/v1/me',
+   {headers: headers})
+   .then (response => {
+        if (response.ok) {
+          return response.json();
+        }
+      })
+   .then (jsonResponse => {
+     userId = jsonResponse.id;
+//step 93 v
+    return fetch('https://api.spotify.com/v1/users/${userId}/playlists',
+        {
+        headers: headers,
+        method: 'POST',
+        body: JSON.stringify({name: playlistName})
+        }
+      )
+   .then(response => {
+        if(response.ok) {
+          return response.json();
+        } else {
+          console.log('Request failed')
+        }
+      })
+   .then(jsonResponse => {
+//94d v
+    const playlistId = jsonResponse.id;
+//94b v
+    return fetch('https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks',
+        {
+        headers: headers,
+        method:'POST',
+//94c v
+        body: JSON.stringify({uris: trackURIs})
+        }
+      );//close last fetch
+    });//close last jsonResponse
+  });//close first jsonResponse
+ }//savePlaylist
