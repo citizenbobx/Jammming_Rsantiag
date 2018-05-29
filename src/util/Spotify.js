@@ -13,9 +13,12 @@ const Spotify = {
   //step 78
   getAccessToken(){
     const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
-    let accessToken = accessTokenMatch[1];
-    const getAccessToken = Spotify.getAccessToken();
+    const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
       if (accessToken === true){
+        return accessToken;
+      }
+      if (accessToken !== null && expiresInMatch !== null){
+        let accessToken = accessTokenMatch[1];
         return accessToken;
       }
       //step 79 v
@@ -29,6 +32,8 @@ const Spotify = {
   }//close getAccessToken
   //step 85 v
   search(term){//step 86 v
+      const getAccessToken = Spotify.getAccessToken();
+
       return fetch(
       `https://api.spotify.com/v1/search?type=track&q=${term}`,
         {headers:{Authorization:`Bearer ${accessToken}`}}
