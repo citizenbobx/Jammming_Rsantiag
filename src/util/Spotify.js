@@ -2,7 +2,6 @@ import React from 'react';
 
 //step 82
 const clientID ="0dc1061f92cb455fa1abf0785e7f4d00";
-
 const redirectURI = "http://localhost:3000/";
 
 //step 77
@@ -23,10 +22,10 @@ const Spotify = {
       }
       //step 79 v
       else {
-        window.location.href.match(`https://example.com/callback#access_token=${([^&]*)}&token_type=Bearer&expires_in=${([^&]*)}`);
         //step 80 v
         window.setTimeout(() => accessToken = '', expiresIn * 1000);
         window.history.pushState('Access Token', null, '/');
+        //step 83 v
         `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`
         }
   }//close getAccessToken
